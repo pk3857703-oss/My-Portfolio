@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prince Kashyap Portfolio</title>
+  <link rel="stylesheet" href="./02.css">
+ 
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="left">Prince Kashyap</div>
+    <div class="right">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="firstsection">
+    <div class="leftsection">
+      Hi, I am <h1 class="name">Prince Kashyap</h1>
+      <div>and I am a <span id="element"></span></div>
+<button id="download">Download CV</button>
+
+<script>
+  document.getElementById("download").addEventListener("click", function() {
+    window.open("./PrinceKashyap_InternshalaResume.pdf", "_blank");
+  });
+</script>
+      <button class="contact" onclick="window.location.href='https://wa.me/7985345578'">Contact Me</button>
+    </div>
+    <div class="rightsection">
+      <img src="./pi1.jpeg" alt="Profile Picture">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, i am Prince. i am a good programer might be becouse every one call me coder. believe me i am a hard or dedicated person who can do any work like a robo who listen everything. Thank You.
+      I am a passionate developer with experience in front‑end and back‑end technologies.
+      I love building interactive, user‑friendly websites and applications.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>A responsive portfolio showcasing my skills and projects.[Currently working]</p>
+    </div>
+    <div class="project-card">
+      <h3>Web App</h3>
+      <p>A full‑stack application with authentication and database integration.[Currently working]</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="pk3857703@gamil.com">Email</a></p>
+    <p>Phone: +91 7985345578</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/prince-kashyap-6797b4280?utm_source=share_via&utm_content=profile&utm_medium=member_android">linkedin.com/in/prince</a></p>
+    <p>wattsapp: <a href="https://wa.me/7985345578">Contact on Wattsapp</a></p>
+  </section>
+
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Front-End Developer', 'Back-End Developer'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+  </script>
+    <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <p>© 2026 Prince Kashyap</p>
+      <ul class="footer-nav">
+        <li><a href="#terms">Terms</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#status">Status</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#cookies">Manage Cookies</a></li>
+        <li><a href="#donotshare">Do Not Share My Personal Information</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
+<script src="script.js"></script>
+</body>
+</html>
