@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prince Kashyap - Skills</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, rgb(40, 62, 86), rgb(25, 40, 60));
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .skills-section {
+      background: rgba(32, 45, 60, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 900px;
+      width: 95%;
+      box-shadow: 0 10px 30px rgba(190, 24, 190, 0.6);
+      display: flex;
+      gap: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .buttons h2 {
+      color: rgb(190, 24, 190);
+      margin-bottom: 10px;
+    }
+
+    .buttons button {
+      background: none;
+      border: 2px solid rgb(190, 24, 190);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-align: left;
+    }
+
+    .buttons button.active {
+      background: rgb(209, 67, 209);
+      box-shadow: 0 10px 20px rgba(209, 67, 209, 0.5);
+      transform: scale(1.05);
+    }
+
+    /* Back button style */
+    .buttons button.back-btn {
+      background: rgb(40, 62, 86);
+      margin-top: 30px;
+    }
+    .buttons button.back-btn:hover {
+      background: rgb(209, 67, 209);
+      box-shadow: 0 8px 15px rgba(209, 67, 209, 0.4);
+    }
+
+    .skills-container {
+      flex: 3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: flex-start;
+    }
+
+    .skill-card {
+      background: rgba(32, 45, 60, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 5px 15px rgba(190, 24, 190, 0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      pointer-events: none;
+    }
+
+    .skill-card.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    .skill-bar {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
+      height: 18px;
+      overflow: hidden;
+    }
+
+    .skill-level {
+      height: 100%;
+      border-radius: 25px;
+      width: 0;
+    }
+
+    @keyframes growWidth {
+      from { width: 0; }
+      to { width: var(--target-width); }
+    } 
+
+    /* Skill colors */
+    .skill-level.html { background: #e44d26; --target-width: 100%; }
+    .skill-level.css { background: #264de4; --target-width: 95%; }
+    .skill-level.react { background: #61dafb; --target-width: 85%; }
+    .skill-level.js { background: #f0db4f; --target-width: 80%; }
+    .skill-level.java { background: #b07219; --target-width: 70%; }
+    .skill-level.c { background: #00599c; --target-width: 65%; }
+    .skill-level.cpp { background: #00599c; --target-width: 60%; }
+
+    @media (max-width: 768px) {
+      .skills-section { flex-direction: column; }
+      .buttons { flex-direction: row; justify-content: center; }
+      .buttons button { width: auto; text-align: center; }
+      .skills-container { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <section class="skills-section">
+    <!-- Left Sidebar -->
+    <div class="buttons">
+      <h2>Skills</h2>
+      <button id="btn-frontend" class="active">Front-End</button>
+      <button id="btn-backend">Back-End</button>
+      <button class="back-btn" onclick="window.location.href='./index.html'">← Back to Main</button>
+    </div>
+
+    <!-- Right Content -->
+    <div class="skills-container">
+      <!-- Frontend Skills -->
+      <div class="skill-card frontend show">
+        <h3>HTML</h3>
+        <div class="skill-bar"><div class="skill-level html"></div></div>
+      </div>
+      <div class="skill-card frontend show">
+        <h3>CSS</h3>
+        <div class="skill-bar"><div class="skill-level css"></div></div>
+      </div>
+      <div class="skill-card frontend show">
+        <h3>React</h3>
+        <div class="skill-bar"><div class="skill-level react"></div></div>
+      </div>
+      <div class="skill-card frontend show">
+        <h3>JavaScript</h3>
+        <div class="skill-bar"><div class="skill-level js"></div></div>
+      </div>
+
+      <!-- Backend Skills -->
+      <div class="skill-card backend">
+        <h3>Java</h3>
+        <div class="skill-bar"><div class="skill-level java"></div></div>
+      </div>
+      <div class="skill-card backend">
+        <h3>C</h3>
+        <div class="skill-bar"><div class="skill-level c"></div></div>
+      </div>
+      <div class="skill-card backend">
+        <h3>C++</h3>
+        <div class="skill-bar"><div class="skill-level cpp"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const btnFrontend = document.getElementById('btn-frontend');
+    const btnBackend = document.getElementById('btn-backend');
+    const frontendSkills = document.querySelectorAll('.skill-card.frontend');
+    const backendSkills = document.querySelectorAll('.skill-card.backend');
+
+    function triggerAnimation(cards) {
+      cards.forEach(card => {
+        const bar = card.querySelector('.skill-level');
+        bar.style.animation = 'none'; // reset
+        void bar.offsetWidth; // force reflow
+        bar.style.animation = `growWidth 2s ease forwards`; // reapply
+      });
+    }
+
+    btnFrontend.addEventListener('click', () => {
+      btnFrontend.classList.add('active');
+      btnBackend.classList.remove('active');
+      frontendSkills.forEach(card => card.classList.add('show'));
+      backendSkills.forEach(card => card.classList.remove('show'));
+      triggerAnimation(frontendSkills);
+    });
+
+    btnBackend.addEventListener('click', () => {
+      btnBackend.classList.add('active');
+      btnFrontend.classList.remove('active');
+      backendSkills.forEach(card => card.classList.add('show'));
+      frontendSkills.forEach(card => card.classList.remove('show'));
+      triggerAnimation(backendSkills);
+    });
+  </script>
+</body>
+</html>

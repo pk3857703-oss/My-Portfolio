@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prince Kashyap Portfolio</title>
+  <link rel="stylesheet" href="./02.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="left">Prince Kashyap</div>
+    <div class="right">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="./skillPage.html">Skills</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="firstsection">
+    <div class="leftsection">
+      Hi, I am 
+      <h1 class="name">Prince Kashyap</h1>
+      <div>and I am a <span id="element"></span></div>
+      <button id="download">Download CV</button>
+      <button class="contact" onclick="window.location.href='https://wa.me/7985345578'">Contact Me</button>
+    </div>
+    <div class="rightsection">
+      <img src="./1.jpeg" alt="Profile Picture">
+    </div>
+  </section>
+
+ <!-- About Section -->
+<section id="about" class="about">
+  <div class="about-container">
+    <!-- Left side: detailed text -->
+    <div class="about-text" class="animated-text">
+      <h2>About Me</h2>
+      <p>
+        Hi, I am Prince Kashyap. I am a passionate developer with strong experience in both front‑end and back‑end technologies. 
+        My journey started with curiosity about how websites work, and over time I mastered HTML, CSS, JavaScript, and frameworks like React. 
+        On the back‑end side, I enjoy working with Java, C, and C++, building efficient algorithms and systems.
+      </p>
+      <p>
+        I believe in creating projects that are not only functional but also visually impressive. 
+        My portfolio reflects my love for animations, unique layouts, and interactive designs. 
+        I thrive on challenges, whether it’s visualizing complex data structures like linked lists or designing responsive e‑commerce layouts.
+      </p>
+      <p>
+        Beyond coding, I am deeply interested in building offline AI assistants with dynamic GUIs, voice recognition, and animated visuals. 
+        I enjoy hackathons, where I push myself to innovate and deliver creative solutions under pressure. 
+        My goal is to keep learning, experimenting, and building projects that inspire others.
+      </p>
+    </div>
+   
+
+    <!-- Right side: images -->
+    <div class="about-images">
+      <!-- 🖼️ Replace with your own image paths -->
+      <img src="./pi1.jpeg" alt="About Image 1">
+      <img src="./2.jpeg" alt="About Image 2">
+      <img src="./3.jpeg" alt="About Image 3">
+    </div>
+  </div>
+</section>
+<!-- contact --><section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-details">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:pk3857703@gamil.com">pk3857703@gamil.com</a></p>
+      <p>Phone: +91 7985345578</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/prince-kashyap-6797b4280">linkedin.com/in/prince</a></p>
+      <p>WhatsApp: <a href="https://wa.me/7985345578">Contact on WhatsApp</a></p>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send Me a Message</h3>
+      <form id="contact-form">
+        <input type="text" name="user_name" placeholder="Your Name" required>
+        <input type="email" name="user_email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Map Section -->
+  <div class="map-container">
+    <h3>My Location</h3>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14229.281358792624!2d80.331871!3d26.449923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c386d1f0f0b0b%3A0x6b6f9b0f0f0f0f0!2sKanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1712780000000!5m2!1sen!2sin" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+
+
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Front-End Developer', 'Back-End Developer'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    // CV Download
+    document.getElementById("download").addEventListener("click", function() {
+      window.open("./PrinceKashyap_InternshalaResume.pdf", "_blank");
+    });
+
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>© 2026 Prince Kashyap</p>
+      <ul class="footer-nav">
+        <li><a href="#terms">Terms</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#status">Status</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+ <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("kKaY-iJ-orvc4cpib"); // ✅ Your Public Key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_5im57rb", "template_ejl4piw", this) // ✅ Your Service ID + Template ID
+      .then(() => {
+        alert("✅ Message sent successfully! I’ll reply soon.");
+      }, (err) => {
+        alert("❌ Error: " + JSON.stringify(err));
+      });
+  });
+</script>
+
+</body>
+</html>

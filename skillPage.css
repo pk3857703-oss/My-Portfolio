@@ -1,0 +1,146 @@
+/* Skills Section */
+.skills-section {
+  padding: 80px 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  box-shadow: 0 10px 30px rgba(190, 24, 190, 0.3);
+}
+
+.skills-section h2 {
+  font-size: 2rem;
+  color: rgb(190, 24, 190);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.skill-card {
+  background: rgba(32, 45, 60, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 5px 15px rgba(190, 24, 190, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(190, 24, 190, 0.7);
+}
+
+.skill-card h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: white;
+  text-align: center;
+}
+
+.skill-bar {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  border-radius: 25px;
+  transition: width 1s ease-in-out;
+}
+
+/* Skill levels with brand colors */
+.skill-level.html {
+  width: 90%;
+  background: #e44d26; /* HTML orange */
+}
+
+.skill-level.css {
+  width: 85%;
+  background: #264de4; /* CSS blue */
+}
+
+.skill-level.js {
+  width: 80%;
+  background: #f0db4f; /* JS yellow */
+  color: black;
+}
+
+.skill-level.react {
+  width: 75%;
+  background: #61dafb; /* React cyan */
+}
+
+.skill-level.node {
+  width: 70%;
+  background: #68a063; /* Node green */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 40px 20px;
+  }
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skill-card {
+    width: 90%;
+  }
+}
+@keyframes growWidth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: var(--target-width);
+  }
+}
+
+.skill-level {
+  height: 100%;
+  border-radius: 25px;
+  width: 0; /* Start from zero width */
+  animation: growWidth 2s ease forwards;
+}
+
+/* Use CSS variables to set target widths */
+.skill-level.html {
+  --target-width: 90%;
+  background: #e44d26;
+  animation-delay: 0.2s;
+}
+
+.skill-level.css {
+  --target-width: 85%;
+  background: #264de4;
+  animation-delay: 0.4s;
+}
+
+.skill-level.js {
+  --target-width: 80%;
+  background: #f0db4f;
+  color: black;
+  animation-delay: 0.6s;
+}
+
+.skill-level.react {
+  --target-width: 75%;
+  background: #61dafb;
+  animation-delay: 0.8s;
+}
+
+.skill-level.node {
+  --target-width: 70%;
+  background: #68a063;
+  animation-delay: 1s;
+}
